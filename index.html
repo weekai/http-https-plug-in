@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" onclick="getData()" value="click">
+    <script src="./lib/axios.min.js"></script>
+    <script>
+        let baseUrl = "http://127.0.0.1:3000"
+        let http = 'http://cache.video.iqiyi.com/jp/avlist/202861101/1/?callback=jsonp9';
+        let https = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=java&json=1&p=3&req=2&cb=fn';
+        function getData() {
+            axios.get(baseUrl, {
+                params: {
+                    url: https
+                }
+            }).then(res => {
+                console.log(res.data);
+            });
+        }
+    </script>
+</body>
+
+</html>
